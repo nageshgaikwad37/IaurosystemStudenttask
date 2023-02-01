@@ -2,6 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
 
+## Instructions for json-server
+
+Before working with UI, first start the json server and keep it running for API calls to work.
+
+Go to the project directory in command prompt/terminal and use following command to start the server.
+
+Run `json-server --watch db.json`
+
+
+For more information on json server please visit: https://github.com/typicode/json-server 
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
@@ -26,3 +38,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 # IaurosystemStudenttask
+
+
+
