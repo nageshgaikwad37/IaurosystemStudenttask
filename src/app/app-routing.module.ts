@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:'dashboard', component:DashbordComponent,canActivate:[AuthgaurdService]},
   {path:'studentAdd', component:StudentformComponent,canActivate:[AuthgaurdService]},
   {path:'studentAdd/:id', component:StudentformComponent,canActivate:[AuthgaurdService]},
-  {path:'page-not-found', component: PageNotFoundComponent, data:{msg: 'This page is not available'}},
+  {path:'page-not-found', component: PageNotFoundComponent, data:{msg: 'This page is not found'}},
   {path:'**', redirectTo: 'page-not-found'} 
   
 ];
