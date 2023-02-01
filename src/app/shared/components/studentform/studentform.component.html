@@ -1,0 +1,57 @@
+<div class="container mt-5 ml-5">
+    <div class="row">
+        <div class="col-md-6 col-sm-4 offset-md-1 offset-sm-4">
+          <form [formGroup]="studentForm" (ngSubmit)="onsubmit()">
+            <div class="form-group">
+                <label for="name">Full Name*</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your Name Here" formControlName="name">
+                <ng-container *ngIf="f['name'].invalid && f['name'].touched">
+                  <span *ngIf="f['name'].hasError('required')">
+                    Name is required here
+                  </span>
+                </ng-container>
+            </div>
+            <div class="form-group">
+                <label for="password">Password*</label>
+                <input type="password" placeholder="Enter password " class="form-control" id="password" formControlName="password">
+                <ng-container *ngIf="f['password'].invalid && f['password'].touched">
+                    <span *ngIf="f['password'].hasError('required')">
+                      password is required here
+                    </span>
+                  </ng-container>
+                  <ng-container *ngIf="f['password'].invalid && f['password'].dirty">
+                    <span *ngIf="f['password'].hasError('minlength')">
+                      password is consist atleast 6 Letters
+                    </span>
+                  </ng-container>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender*</label>
+                <br>
+                <ng-container *ngFor="let gen of genders">
+                    <input type="radio" id="gender" class="ml-1" [value]="gen" formControlName="gender">   {{gen}}
+                </ng-container>    
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Birth Date*</label>
+                <input type="date" class="form-control" id="dob" formControlName="dob">
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address*</label>
+                <input type="text" placeholder="Enter your address" class="form-control" id="address" formControlName="address">
+            </div>
+            <div class="form-group">
+                <label for="subjectEnroll">Subject Enroll*</label>
+                <input type="text" class="form-control" placeholder="Enroll your Subject" id="subjectEnroll" formControlName="subjectEnroll">
+            </div>
+            
+            <div class="form-group">
+                <button class="btn btn-primary" [disabled]="studentForm.invalid" type="submit" *ngIf="canEdit"> Add Student</button>
+                <button class="btn btn-primary" [disabled]="studentForm.invalid" type="button" *ngIf="!canEdit" (click)="onUpdate()">Update</button>
+            </div>
+          </form>    
+        </div>
+    </div>
+</div>
